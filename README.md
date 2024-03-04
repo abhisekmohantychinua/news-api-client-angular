@@ -1,5 +1,8 @@
 # NewsApiClientAngular
 
+> [!IMPORTANT]
+> This is the client application for an public api called `News API`. Check out [`here`](https://newsapi.org/docs)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
 
 ## Development server
