@@ -1,0 +1,50 @@
+<nav class="flex justify-between md:justify-start items-center w-full border-b-2 p-4 relative md:space-x-5">
+    <img src="/assets/news-logo.png" alt="" routerLink="/" class="object-fill max-w-32">
+    <!-- navigator  -->
+    <p class="hidden md:block text-xl font-semibold text-gray-700 hover:text-gray-950 cursor-pointer "
+        routerLink="/everything">Everything</p>
+
+    <!-- search bar  -->
+    <form class="hidden md:flex justify-center items-center gap-2 " (submit)="onSubmit()">
+        <input type="text" class="rounded-full border-2 w-full outline-none min-h-10 border-gray-700 ps-4"
+            [(ngModel)]="query" name="query">
+        <button type="submit" class="bg-gray-700 p-2 min-w-28 min-h-8 rounded-lg font-medium text-white">Search</button>
+    </form>
+
+
+    <!-- 3bar icon  -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-8 h-8 md:hidden cursor-pointer" (click)="toggleMenuView()">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+    <!-- menu  -->
+    @if (isMenuHidden) {
+    <div class="absolute right-2 top-full border-2  flex flex-col space-y-5 p-4 min-w-80 text-start">
+
+        <div class="w-full flex justify-end  ">
+            <!-- close icon   -->
+            <button (click)="toggleMenuView()" class="hover:bg-gray-200 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-8 h-8 cursor-pointer">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- navigator  -->
+        <p class="text-xl font-semibold text-gray-700 hover:text-gray-950 cursor-pointer" routerLink="/everything">
+            Everything</p>
+
+        <!-- search bar  -->
+        <form class="flex flex-col items-end gap-2" (submit)="onSubmit()">
+            <input type="text" class="rounded-full border-2 w-full outline-none min-h-10 border-gray-700 ps-4"
+                [(ngModel)]="query" name="query">
+            <button type="submit"
+                class="bg-gray-700 p-2 min-w-28 min-h-8 rounded-lg font-medium text-white">Search</button>
+        </form>
+    </div>
+    }
+
+
+</nav>
